@@ -81,7 +81,9 @@ android {
 
     externalNativeBuild {
         cmake {
-            version = tools.versions.cmake.get()
+            // Use CMake version installed in Android SDK (3.22.1)
+            // The tools.versions.cmake refers to GitHub Action version, not CMake version
+            version = "3.22.1"
             path("src/main/rust/CMakeLists.txt")
         }
     }
